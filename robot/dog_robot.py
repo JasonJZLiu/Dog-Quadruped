@@ -113,7 +113,7 @@ class Dog_Robot:
     def apply_command(self, state_cmd):
         """
         Applies joint space position command to the robot.
-        :param position_cmd: Joint position command in the joint space in degrees
+        :param state_cmd: Joint position command in the joint space in degrees
         """
         self._update(state_cmd)
         current_servo_positions = self._servo_positions(self._state)
