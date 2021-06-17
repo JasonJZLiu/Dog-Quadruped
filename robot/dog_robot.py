@@ -24,10 +24,10 @@ class Dog_Robot:
         self._state = self.default_state
         self._previous_state = self.default_state
 
-        self._default_servo_positions = [90, 75, 85,
-                                         100, 80, 105,
-                                         100, 75, 85,
-                                         90, 80, 100]
+        self._default_servo_positions = [100, 170, 50,
+                                         95, 170, 80,
+                                         97, 45, 115,
+                                         95, 45, 120]
 
         self._previous_servo_positions = self._default_servo_positions
                                         
@@ -80,7 +80,7 @@ class Dog_Robot:
         for i in [0,3,6,9]:
             servo_positions[i] += self._default_servo_positions[i]
             servo_positions[i+1] += self._default_servo_positions[i+1]
-            servo_positions[i+2] += delta[i+1] + self._default_servo_positions[i+2]
+            servo_positions[i+2] += -1*delta[i+1] + self._default_servo_positions[i+2]
 
         return servo_positions
     
